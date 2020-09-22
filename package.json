@@ -5,12 +5,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "postinstall": "npx zenn init",
+    "postinstall": "run-p init greeting",
     "start": "run-p preview server",
-    "preview": "npx zenn preview --port 65535",
+    "preview": "zenn preview --port 65535",
+    "article": "zenn new:article",
+    "book": "zenn new:book",
+    "init": "zenn init",
     "server": "browser-sync start --config bs-config.js",
-    "article": "npx zenn new:article",
-    "book": "npx zenn new:book"
+    "greeting": "asciify \"Hello Zenn!\" -f standard"
   },
   "dependencies": {
     "zenn-cli": "^0.1.32"
